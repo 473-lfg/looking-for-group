@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('feed');
+  this.route('look');
+  this.route('my_groups');
+  this.route('about');
 });
 
 export default Router;

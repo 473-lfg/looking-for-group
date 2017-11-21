@@ -3,6 +3,10 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Reminder for Group Members
+
+You need to set the variables in app/config/environment.js to the correct values for your Firebase DB for the application to actually save things.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
