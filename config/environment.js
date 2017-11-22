@@ -9,11 +9,11 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-      apiKey: 'xyz',
-      authDomain: 'YOUR-FIREBASE-APP.firebaseapp.com',
-      databaseURL: 'https://YOUR-FIREBASE-APP.firebaseio.com',
-      storageBucket: 'YOUR-FIREBASE-APP.appspot.com',
-      messagingSenderId: '1234'
+      apiKey: 'AIzaSyApvW0PR8_tDX8hf03JChhGVFbxIx9AYUA',
+      authDomain: 'looking-for-group-8bbf6.firebaseapp.com',
+      databaseURL: 'https://looking-for-group-8bbf6.firebaseio.com',
+      storageBucket: 'looking-for-group-8bbf6.appspot.com',
+      messagingSenderId: '251600824390'
     },
 
     // if using ember-cli-content-security-policy
@@ -21,6 +21,10 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
       'frame-src': "'self' https://*.firebaseapp.com",
       'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
+    torii: {
+        sessionServiceName: 'session',
     },
 
     EmberENV: {

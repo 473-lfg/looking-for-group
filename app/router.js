@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('look');
   this.route('my_groups');
   this.route('about');
+  this.route('login');
 });
 
 export default Router;
