@@ -23,10 +23,6 @@ module.exports = function(environment) {
       'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
     },
 
-    torii: {
-        sessionServiceName: 'session',
-    },
-
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -42,6 +38,10 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: '/unauthorized'
   };
 
   if (environment === 'development') {

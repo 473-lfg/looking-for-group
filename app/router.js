@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('my_groups');
   this.route('about');
   this.route('login');
+  this.route('unauthorized');
 });
 
 export default Router;
