@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('about');
   this.route('login');
   this.route('unauthorized');
+  this.route('sign-up');
 });
 
 export default Router;

@@ -10,6 +10,7 @@ module.exports = function(app) {
           return res.status(401).send('Unauthorized');
         }
     });
+    
     app.post('/token', function(req, res) {
 
       if (req.body.username == 'login' && req.body.password == 'ok') {
