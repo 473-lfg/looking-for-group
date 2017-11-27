@@ -10,14 +10,8 @@ module.exports = function(app) {
           return res.status(401).send('Unauthorized');
         }
     });
-    
+
     app.post('/token', function(req, res) {
-
-      if (req.body.username == 'login' && req.body.password == 'ok') {
         res.send({ access_token: "success_token" });
-      } else {
-        res.status(400).send({ error: "invalid_grant" });
-      }
-
     });
 };
