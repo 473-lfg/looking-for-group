@@ -6,6 +6,5 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   tldr: DS.attr('string'),
   preferences: DS.attr('string'),
-  number_of_members: DS.attr('string')
 
 });
