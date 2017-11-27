@@ -13,7 +13,7 @@ export default Controller.extend({
       var valid = false;
       for (var i = 0; i < users.content.length; i++)
       {
-          if (login === users.content[0].__data.name && password === users.content[0].__data.pass) {
+          if (login === users.content[i].__data.name && password === users.content[i].__data.pass) {
               valid = true;
           }
       }
