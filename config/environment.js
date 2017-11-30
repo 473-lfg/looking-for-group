@@ -9,7 +9,7 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-      //API STUFF GOES HERE
+    //Empty
     },
 
     // if using ember-cli-content-security-policy
@@ -34,6 +34,10 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: '/unauthorized'
   };
 
   if (environment === 'development') {
