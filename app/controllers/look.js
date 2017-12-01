@@ -18,9 +18,6 @@ export default Controller.extend({
 
   isDisabled: Ember.computed.not('isValid'),
 
-  needs: ['application'],
-  currentUser: Ember.computed.alias('controllers.application.currentUser'),
-
   name: '',
   game: '',
   tldr: '',
@@ -39,7 +36,8 @@ export default Controller.extend({
       const preference = this.get('preference');
       const description = this.get('description');
 
-      const newGroup = this.store.createRecord('group', { owner: currentUser, name: name, game: game, description: description, tldr: tldr, preferences: preference});
+      const newGroup = this.store.createRecord('group', { owner: 'Current User', name: name, game: game, description: description, tldr: tldr, preferences: preference});
+      //Need to be replaced with actual current user variable
 
       newGroup.save();
 

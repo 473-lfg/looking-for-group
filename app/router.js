@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('unauthorized');
   this.route('sign-up');
   this.route('apply');
+  this.route('applications');
 });
 
 export default Router;

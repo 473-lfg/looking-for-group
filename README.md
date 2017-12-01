@@ -3,6 +3,12 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+##Files that will need to be changed after globals are made
+app/controllers/look.js
+app/controllers/apply.js
+app/routes/applications.js
+app/routes/my-groups.js
+
 ## Reminder for Group Members
 
 You need to set the variables in app/config/environment.js to the correct values for your Firebase DB for the application to actually save things.

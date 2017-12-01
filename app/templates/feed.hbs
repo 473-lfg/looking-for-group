@@ -2,10 +2,10 @@
 
 {{#each reverse as |group|}}
 <div class="group">
-  <div class="name">{{group.name}}</div>
-  <div class="game">{{group.game}}</div>
-  <div class="preferences">{{group.preferences}}</div>
-  <div class="tldr">{{group.tldr}}</div>
+  <div class="name">Group: {{group.name}}</div>
+  <div class="game">Game: {{group.game}}</div>
+  <div class="preferences">Preferences: {{group.preferences}}</div>
+  <div class="tldr">Description: {{group.tldr}}</div>
   <button {{action 'apply' group.owner group.name}} class="btn btn-primary">Apply</button>
 </div>
 <br>

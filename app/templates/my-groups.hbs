@@ -1,2 +1,14 @@
-Similar to the Feed code, but only displays the Group if the user who created the group is the same as the one who is currently logged in.
+<h2>Groups You've Created</h2>
+
+{{#each reverse as |group|}}
+<div class="group">
+  <div class="name">Group: {{group.name}}</div>
+  <div class="game">Game: {{group.game}}</div>
+  <div class="preferences">Preferences: {{group.preferences}}</div>
+  <div class="tldr">Description: {{group.tldr}}</div>
+  <button {{action 'apply' group.owner group.name}} class="btn btn-primary">Apply</button>
+</div>
+<br>
+{{/each}}
+
 {{outlet}}
