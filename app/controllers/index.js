@@ -2,6 +2,8 @@ import Ember from 'ember';
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  needs: ['application'],
+  currentUser: Ember.computed.alias('controllers.application.currentUser'),
 
   session: Ember.inject.service('session'),
   authManager: Ember.inject.service('session'),
@@ -19,6 +21,7 @@ export default Controller.extend({
       }
       if (valid) {
           this.get('authManager').authenticate('authenticator:oauth2', login, password);
+          this.set('currentUser', login);
       } else {
           alert('Wrong Login or Password');
       }

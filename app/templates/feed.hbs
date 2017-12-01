@@ -1,2 +1,15 @@
-Feed should be a page that displays every group model, in a nice, readable, and visually pleasing format.
+<h2>Feed</h2>
+
+{{#each reverse as |group|}}
+<div class="group">
+  <div class="name">{{group.name}}</div>
+  <div class="game">{{group.game}}</div>
+  <div class="preferences">{{group.preferences}}</div>
+  <div class="tldr">{{group.tldr}}</div>
+  <button {{action 'apply' group.owner group.name}} class="btn btn-primary">Apply</button>
+</div>
+<br>
+{{/each}}
+
+
 {{outlet}}

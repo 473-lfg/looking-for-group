@@ -9,7 +9,7 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     firebase: {
-    //Empty
+    //API STUFF GOES HERE
     },
 
     // if using ember-cli-content-security-policy

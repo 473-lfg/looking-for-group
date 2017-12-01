@@ -2,13 +2,30 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
 
+  nameNotEmpty: Ember.computed.notEmpty('name'),
+  gameNotEmpty: Ember.computed.notEmpty('game'),
+  tldrNotEmpty: Ember.computed.notEmpty('tldr'),
+  preferenceNotEmpty: Ember.computed.notEmpty('preference'),
+  descriptionNotEmpty: Ember.computed.notEmpty('description'),
+  tldrLength: Ember.computed.alias('tldr.length'),
+  tldrValid: Ember.computed.lte('tldrLength', 140),
+  bool1: Ember.computed.and('nameNotEmpty', 'gameNotEmpty'),
+  bool2: Ember.computed.and('tldrNotEmpty', 'preferenceNotEmpty'),
+  bool3: Ember.computed.and('descriptionNotEmpty', 'tldrValid'),
+  bool4: Ember.computed.and('bool1', 'bool2'),
+
+  isValid: Ember.computed.and('bool4', 'bool3'),
+
+  isDisabled: Ember.computed.not('isValid'),
+
+  needs: ['application'],
+  currentUser: Ember.computed.alias('controllers.application.currentUser'),
+
   name: '',
   game: '',
   tldr: '',
-  text: '',
   preference: '',
   description: '',
-  number_of_members: '',
 
 
 
@@ -21,15 +38,17 @@ export default Controller.extend({
       const tldr = this.get('tldr');
       const preference = this.get('preference');
       const description = this.get('description');
-      const number_of_members = this.get('number_of_members');
 
-      const newGroup = this.store.createRecord('group', { name: name, game: game, description: description, tldr: tldr, preferences: preference, number_of_members: number_of_members});
+      const newGroup = this.store.createRecord('group', { owner: currentUser, name: name, game: game, description: description, tldr: tldr, preferences: preference});
 
       newGroup.save();
 
-      alert(`Saving of the following email address is in progress: ${this.get('emailAddress')}`);
-      this.set('responseMessage', `Thank you! We've just saved your email address: ${this.get('emailAddress')}`);
-      this.set('emailAddress', '');
+      this.set('responseMessage', `Thank you! We've just made your group ${this.get('name')}, and it should appear on the feed page now.`);
+      this.set('name', '');
+      this.set('game', '');
+      this.set('tldr', '');
+      this.set('preference', '');
+      this.set('description', '');
     }
   }
 });
