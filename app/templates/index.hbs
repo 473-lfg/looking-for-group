@@ -1,7 +1,0 @@
-{{#if session.isAuthenticated}}
-    <a {{action 'signOut'}}>Logout</a>
-{{else}}
-    <form {{action "signIn" "google" on='submit'}}>
-      <button type="submit">Login</button>
-    </form>
-{{/if}}

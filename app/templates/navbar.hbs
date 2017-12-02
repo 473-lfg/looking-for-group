@@ -12,12 +12,34 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-            {{#link-to 'index' tagName="li"}}<a href="">Home</a>{{/link-to}}
+            {{#link-to 'home' tagName="li"}}<a href="">Home</a>{{/link-to}}
             {{#link-to 'feed' tagName="li"}}<a href="">Feed</a>{{/link-to}}
-            {{#link-to 'look' tagName="li"}}<a href="">Look</a>{{/link-to}}
-            {{#link-to 'my_groups' tagName="li"}}<a href="">My Groups</a>{{/link-to}}
-            {{#link-to 'applications' tagName="li"}}<a href="">Check Applications</a>{{/link-to}}
+
+            {{#if session.isAuthenticated}}
+                {{#link-to 'look' tagName="li"}}<a href="">Look</a>{{/link-to}}
+            {{else}}
+                {{#link-to 'unauthorized' tagName="li"}}<a href="">Look</a>{{/link-to}}
+            {{/if}}
+
+            {{#if session.isAuthenticated}}
+                {{#link-to 'my_groups' tagName="li"}}<a href="">My Groups</a>{{/link-to}}
+            {{else}}
+                {{#link-to 'unauthorized' tagName="li"}}<a href="">My Groups</a>{{/link-to}}
+            {{/if}}
+
+            {{#if session.isAuthenticated}}
+                {{#link-to 'applications' tagName="li"}}<a href="">Check Applications</a>{{/link-to}}
+            {{else}}
+                {{#link-to 'unauthorized' tagName="li"}}<a href="">My Groups</a>{{/link-to}}
+            {{/if}}
+
             {{#link-to 'about' tagName="li"}}<a href="">About</a>{{/link-to}}
+
+            {{#if session.isAuthenticated}}
+                <a href="" class = "nav-button" {{action "signOut"}}>Logout</a>
+            {{else}}
+                <a href="" class = "nav-button" {{action "signIn" "google"}}>Login</a>
+            {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
