@@ -1,10 +1,7 @@
 {{#if session.isAuthenticated}}
-    <a {{action 'invalidateSession'}}>Logout</a>
+    <a {{action 'signOut'}}>Logout</a>
 {{else}}
-    <form {{action 'authenticate' on='submit'}}>
-      {{input value=login placeholder='Login'}}<br>
-      {{input value=password placeholder='Password' type='password'}}<br>
+    <form {{action "signIn" "google" on='submit'}}>
       <button type="submit">Login</button>
-      {{#link-to 'sign-up'}}<a href="">Sign Up</a>{{/link-to}}
     </form>
 {{/if}}

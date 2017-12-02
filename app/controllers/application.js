@@ -1,7 +1,15 @@
-import Controller from '@ember/controller';
+import Ember from 'ember';
 
-export default Controller.extend({
+export default Ember.Controller.extend({
+  session: Ember.inject.service('session'),
   currentUser: '',
   currentlyApplyingTo: '',
-  groupNameApplyingTo: ''
+  groupNameApplyingTo: '',
+
+  actions: {
+      invalidateSession() {
+          this.get('session').invalidate();
+      }
+  }
+
 });

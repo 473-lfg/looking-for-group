@@ -27,9 +27,6 @@ export default Controller.extend({
       }
     },
 
-    invalidateSession() {
-        this.get('session').invalidate();
-    }
 
   }
 });

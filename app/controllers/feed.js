@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import Ember from 'ember';
 
 const { inject: { service }, Component } = Ember;
 
@@ -19,7 +20,7 @@ export default Controller.extend({
     apply(ownerOfGroupAppliedTo, nameOfGroup) {
 
         //set global variables, then go to application route
-        
+
         this.transitionToRoute('apply');
       }
     }
