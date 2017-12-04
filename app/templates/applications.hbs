@@ -1,12 +1,14 @@
 <h2>Received Applications</h2>
 
-{{#each reverse as |application|}}
+{{#each reverse as |a|}}
+{{#if (eq session.currentUser.uid a.owner)}}
 <div class="application">
-  <div class="name">For Group: {{application.name}}</div>
-  <div class="contactMethod">Method of Contact: {{application.contactMethod}}</div>
-  <div class="contact">Contact: {{application.contact}}</div>
-  <div class="application">Application: {{application.application}}</div>
+  <div class="name">For Group: {{a.name}}</div>
+  <div class="contactMethod">Method of Contact: {{a.contactMethod}}</div>
+  <div class="contact">Contact: {{a.contact}}</div>
+  <div class="application">Application: {{a.application}}</div>
 </div>
 <br>
+{{/if}}
 {{/each}}
 {{outlet}}

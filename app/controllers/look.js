@@ -2,7 +2,6 @@ import Controller from '@ember/controller';
 import Ember from 'ember';
 
 export default Controller.extend({
-
   nameNotEmpty: Ember.computed.notEmpty('name'),
   gameNotEmpty: Ember.computed.notEmpty('game'),
   tldrNotEmpty: Ember.computed.notEmpty('tldr'),
@@ -30,14 +29,14 @@ export default Controller.extend({
 
 
   actions: {
-    saveGroup() {
+    saveGroup(owner) {
       const name = this.get('name');
       const game = this.get('game');
       const tldr = this.get('tldr');
       const preference = this.get('preference');
       const description = this.get('description');
 
-      const newGroup = this.store.createRecord('group', { owner: 'Current User', name: name, game: game, description: description, tldr: tldr, preferences: preference});
+      const newGroup = this.store.createRecord('group', { owner: owner, name: name, game: game, description: description, tldr: tldr, preferences: preference});
       //Need to be replaced with actual current user variable
 
       newGroup.save();

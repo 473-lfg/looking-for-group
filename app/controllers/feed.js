@@ -16,7 +16,7 @@ export default Controller.extend({
 
         //set global variables, then go to application route
 
-        this.transitionToRoute('apply');
+        this.transitionToRoute('apply', {queryParams: { owner: ownerOfGroupAppliedTo, name: nameOfGroup}});
       }
     }
 });
