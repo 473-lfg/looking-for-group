@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Teko|Bungee');
 
 .nav-button {
     color: #9d9d9d;
@@ -13,4 +14,76 @@
     white-space: nowrap;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.group {
+  color: white;
+  border-radius: 5px;
+    background: #383838;
+    padding: 20px;
+}
+
+.application {
+  color: white;
+  border-radius: 5px;
+    background: #383838;
+    padding: 20px;
+}
+
+.navbar {
+  margin-top: 30px;
+  font-family: 'Bungee', sans-serif;
+
+}
+
+.game {
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+}
+
+.name {
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+}
+
+.desc {
+  font-family: 'Bungee', sans-serif;
+  font-size: 15px;
+}
+
+.preferences {
+  font-family: 'Bungee', sans-serif;
+  font-size: 15px;
+}
+
+h2 {
+  font-family: 'Bungee', sans-serif;
+}
+
+h1 {
+  font-family: 'Bungee', sans-serif;
+}
+
+.btn {
+  font-family: 'Bungee', sans-serif;
+  margin: 10px;
+}
+
+.contact{
+  font-family: 'Bungee', sans-serif;
+  font-size: 15px;
+}
+
+.contactMethod{
+  font-family: 'Bungee', sans-serif;
+  font-size: 15px;
+}
+
+.app{
+  font-family: 'Bungee', sans-serif;
+  font-size: 15px;
+}
+
+.headLink{
+  color: black;
 }

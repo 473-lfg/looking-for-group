@@ -6,15 +6,13 @@ export default Controller.extend({
   gameNotEmpty: Ember.computed.notEmpty('game'),
   tldrNotEmpty: Ember.computed.notEmpty('tldr'),
   preferenceNotEmpty: Ember.computed.notEmpty('preference'),
-  descriptionNotEmpty: Ember.computed.notEmpty('description'),
   tldrLength: Ember.computed.alias('tldr.length'),
   tldrValid: Ember.computed.lte('tldrLength', 140),
   bool1: Ember.computed.and('nameNotEmpty', 'gameNotEmpty'),
   bool2: Ember.computed.and('tldrNotEmpty', 'preferenceNotEmpty'),
-  bool3: Ember.computed.and('descriptionNotEmpty', 'tldrValid'),
   bool4: Ember.computed.and('bool1', 'bool2'),
 
-  isValid: Ember.computed.and('bool4', 'bool3'),
+  isValid: Ember.computed.and('bool4', 'tldrValid'),
 
   isDisabled: Ember.computed.not('isValid'),
 
@@ -22,7 +20,7 @@ export default Controller.extend({
   game: '',
   tldr: '',
   preference: '',
-  description: '',
+
 
 
 
