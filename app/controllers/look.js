@@ -2,20 +2,17 @@ import Controller from '@ember/controller';
 import Ember from 'ember';
 
 export default Controller.extend({
-
   nameNotEmpty: Ember.computed.notEmpty('name'),
   gameNotEmpty: Ember.computed.notEmpty('game'),
   tldrNotEmpty: Ember.computed.notEmpty('tldr'),
   preferenceNotEmpty: Ember.computed.notEmpty('preference'),
-  descriptionNotEmpty: Ember.computed.notEmpty('description'),
   tldrLength: Ember.computed.alias('tldr.length'),
   tldrValid: Ember.computed.lte('tldrLength', 140),
   bool1: Ember.computed.and('nameNotEmpty', 'gameNotEmpty'),
   bool2: Ember.computed.and('tldrNotEmpty', 'preferenceNotEmpty'),
-  bool3: Ember.computed.and('descriptionNotEmpty', 'tldrValid'),
   bool4: Ember.computed.and('bool1', 'bool2'),
 
-  isValid: Ember.computed.and('bool4', 'bool3'),
+  isValid: Ember.computed.and('bool4', 'tldrValid'),
 
   isDisabled: Ember.computed.not('isValid'),
 
@@ -23,21 +20,21 @@ export default Controller.extend({
   game: '',
   tldr: '',
   preference: '',
-  description: '',
+
 
 
 
 
 
   actions: {
-    saveGroup() {
+    saveGroup(owner) {
       const name = this.get('name');
       const game = this.get('game');
       const tldr = this.get('tldr');
       const preference = this.get('preference');
       const description = this.get('description');
 
-      const newGroup = this.store.createRecord('group', { owner: 'Current User', name: name, game: game, description: description, tldr: tldr, preferences: preference});
+      const newGroup = this.store.createRecord('group', { owner: owner, name: name, game: game, description: description, tldr: tldr, preferences: preference});
       //Need to be replaced with actual current user variable
 
       newGroup.save();

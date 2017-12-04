@@ -9,20 +9,18 @@
     {{input type="text" value=game class="form-control" placeholder="What game is this for?" autofocus="autofocus"}}
   </div>
   <div class="col-xs-10 col-xs-offset-1 col-sm-9 col-sm-offset-0 col-md-5 col-md-offset-0">
-    {{textarea value=tldr class="form-control" rows=5 placeholder="What's your Too Long; Didn't Read? (Under 140 Characters)"}}
+    {{textarea value=tldr class="form-control" rows=5 placeholder="Description of the Group (Under 140 Characters)"}}
   </div>
   <div class="col-xs-10 col-xs-offset-1 col-sm-9 col-sm-offset-0 col-md-5 col-md-offset-0">
     {{input type="text" value=preference class="form-control" placeholder="Any Preferences?"}}
   </div>
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-5 col-md-offset-0">
-    {{input type="number" value=number_of_members class="form-control" placeholder="Number of allowed Members"}}
-  </div>
-  <div class="col-xs-10 col-xs-offset-1 col-sm-20 col-sm-offset-0 col-md-5 col-md-offset-0">
-    {{textarea class="form-control" placeholder="Description of the Group." rows="15" value=description}}
-  </div>
   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-      <button disabled={{isDisabled}} {{action 'saveGroup'}} class="btn btn-primary btn-lg btn-block">Make Group</button>
+      <button disabled={{isDisabled}} {{action 'saveGroup' session.currentUser.uid}} class="btn btn-primary btn-lg btn-block">Make Group</button>
   </div>
 </div>
+
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
 
 {{outlet}}

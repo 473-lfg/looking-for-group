@@ -1,14 +1,17 @@
 <h2>Groups You've Created</h2>
-<h2>{{session.currentUser.displayName}}</h2>
+
 {{#each reverse as |group|}}
+{{#if (eq session.currentUser.uid group.owner)}}
 <div class="group">
   <div class="name">Group: {{group.name}}</div>
   <div class="game">Game: {{group.game}}</div>
-  <div class="preferences">Preferences: {{group.preferences}}</div>
-  <div class="tldr">Description: {{group.tldr}}</div>
-  <button {{action 'apply' group.owner group.name}} class="btn btn-primary">Apply</button>
+  <div class="preferences">Preferences:</div>
+  <div class="preferencesText">{{group.preferences}}</div>
+  <div class="desc">Description: </div>
+  <div class="descText">{{group.tldr}}</div>
 </div>
 <br>
+{{/if}}
 {{/each}}
 
 {{outlet}}

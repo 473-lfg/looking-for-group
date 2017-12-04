@@ -12,7 +12,6 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-            {{#link-to 'home' tagName="li"}}<a href="">Home</a>{{/link-to}}
             {{#link-to 'feed' tagName="li"}}<a href="">Feed</a>{{/link-to}}
 
             {{#if session.isAuthenticated}}
@@ -30,16 +29,22 @@
             {{#if session.isAuthenticated}}
                 {{#link-to 'applications' tagName="li"}}<a href="">Check Applications</a>{{/link-to}}
             {{else}}
-                {{#link-to 'unauthorized' tagName="li"}}<a href="">My Groups</a>{{/link-to}}
+                {{#link-to 'unauthorized' tagName="li"}}<a href="">Check Applications</a>{{/link-to}}
             {{/if}}
 
             {{#link-to 'about' tagName="li"}}<a href="">About</a>{{/link-to}}
 
             {{#if session.isAuthenticated}}
-                <a href="" class = "nav-button" {{action "signOut"}}>Logout</a>
-            {{else}}
-                <a href="" class = "nav-button" {{action "signIn" "google"}}>Login</a>
+                <li><a>User: {{session.currentUser.displayName}}</a></li>
             {{/if}}
+
+            {{#if session.isAuthenticated}}
+                <li><a href="" {{action "signOut"}}>Logout</a></li>
+            {{else}}
+                <li><a href="" {{action "signIn" "google"}}>Login</a></li>
+            {{/if}}
+
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
