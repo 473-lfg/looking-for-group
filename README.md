@@ -1,19 +1,8 @@
 # lfg
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-##Files that will need to be changed after globals are made
-app/controllers/look.js
-app/controllers/apply.js
-app/routes/applications.js
-app/routes/my-groups.js
+Looking for Group is a small application meant to have you find groups for a type of gaming. You can post and group, apply to a group, and view applications you've received within the web app.
 
 * [User Guide](https://docs.google.com/document/d/1WLK4PcJH7yjXm1LGeh5VAf4x9FUP5Jc6lJfRdnaFb1w/edit?usp=sharing)
-
-## Reminder for Group Members
-
-You need to set the variables in app/config/environment.js to the correct values for your Firebase DB for the application to actually save things.
+* [Installation Guide] (https://docs.google.com/document/d/1isTKzvmfrd4VPwtJXbqxIRPLVUqQvdWCgBGGUBG42LI/edit?usp=sharing)
 
 ## Prerequisites
 
