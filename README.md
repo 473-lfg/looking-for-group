@@ -1,3 +1,7 @@
+
+* [User Guide](https://docs.google.com/document/d/1WLK4PcJH7yjXm1LGeh5VAf4x9FUP5Jc6lJfRdnaFb1w/edit?usp=sharing)
+
+
 # lfg
 
 This README outlines the details of collaborating on this Ember application.
