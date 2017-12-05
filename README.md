@@ -9,6 +9,8 @@ app/controllers/apply.js
 app/routes/applications.js
 app/routes/my-groups.js
 
+* [User Guide](https://docs.google.com/document/d/1WLK4PcJH7yjXm1LGeh5VAf4x9FUP5Jc6lJfRdnaFb1w/edit?usp=sharing)
+
 ## Reminder for Group Members
 
 You need to set the variables in app/config/environment.js to the correct values for your Firebase DB for the application to actually save things.
